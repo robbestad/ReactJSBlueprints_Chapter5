@@ -3,6 +3,15 @@
   "version": "1.0.0",
   "description": "Code for ReactJS Blueprints chapter 5",
   "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/svenanders/ReactJSBlueprints_Chapter5"
+  },
+  "author": {
+    "name": "Sven Anders Robbestad",
+    "email": "sven@robbestad.com",
+    "url": "https://www.robbestad.com"
+  },
   "directories": {
     "source": "source"
   },
@@ -28,7 +37,7 @@
   },
   "scripts": {
     "bundle": "NODE_ENV=production ./node_modules/.bin/browserify source/app.jsx -o build/bundle.js && uglifyjs build/bundle.js --source-map-root / --source-map public/bundle.js.map -c -m > public/bundle.js && rm build/bundle.js",
-    "start": "node public/heroku.js",
+    "start": "node server",
     "dev": "node server.js",
     "dist": "npm run bundle && git commit -am\"heroku dist\" && git push heroku master"
   },
@@ -37,11 +46,6 @@
       "babelify",
       "reactify"
     ]
-  },
-  "author": {
-    "name": "Sven Anders Robbestad",
-    "email": "sven@robbestad.com",
-    "url": "http://www.robbestad.com"
   },
   "license": "ISC",
   "dependencies": {
